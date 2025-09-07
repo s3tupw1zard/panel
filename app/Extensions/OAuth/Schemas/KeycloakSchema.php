@@ -63,6 +63,11 @@ final class KeycloakSchema extends OAuthSchema
         return env('OAUTH_KEYCLOAK_DISPLAY_NAME', 'Keycloak');
     }
 
+    public function getIcon(): ?string
+    {
+        return env('OAUTH_KEYCLOAK_ICON', 'tabler-user-shield');
+    }
+
     public function getHexColor(): string
     {
         return env('OAUTH_KEYCLOAK_DISPLAY_COLOR', '#0083be');

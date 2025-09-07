@@ -9,6 +9,7 @@ use App\Extensions\OAuth\Schemas\DiscordSchema;
 use App\Extensions\OAuth\Schemas\GithubSchema;
 use App\Extensions\OAuth\Schemas\GitlabSchema;
 use App\Extensions\OAuth\Schemas\SteamSchema;
+use App\Extensions\OAuth\Schemas\KeycloakSchema;
 use Illuminate\Support\ServiceProvider;
 
 class OAuthServiceProvider extends ServiceProvider
@@ -30,6 +31,7 @@ class OAuthServiceProvider extends ServiceProvider
 
             // Additional OAuth providers from socialiteproviders.com
             $service->register(new AuthentikSchema());
+            $service->register(new KeycloakSchema()); 
             $service->register(new DiscordSchema());
             $service->register(new SteamSchema());
 
